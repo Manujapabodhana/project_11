@@ -1,47 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import Header from './components/Header';
-import HeroSection from './components/HeroSection';
-import Sidebar from './components/Sidebar';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import './styles/App.css';
 
 function App() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  
-  const heroSlides = [
-    {
-      title: "RETIRING 16 TEST TON ANGELO",
-      subtitle: "MATHEWS A TRUE WARRIOR",
-      buttonText: "READ MORE"
-    },
-    {
-      title: "SRI LANKA CRICKET",
-      subtitle: "CHAMPIONS FOREVER",
-      buttonText: "LEARN MORE"
-    },
-    {
-      title: "UPCOMING TOURNAMENTS",
-      subtitle: "MAJOR CLUB T20 2025",
-      buttonText: "VIEW SCHEDULE"
-    }
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
-    
-    return () => clearInterval(timer);
-  }, [heroSlides.length]);
-
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <HeroSection 
-        slides={heroSlides}
-        currentSlide={currentSlide}
-        setCurrentSlide={setCurrentSlide}
-      />
-      <Sidebar />
-    </div>
+    <Router>
+      <div className="app">
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<div>Home Page</div>} />
+            <Route path="/international/*" element={<div>International</div>} />
+            <Route path="/domestic/*" element={<div>Domestic</div>} />
+            <Route path="/news/*" element={<div>News</div>} />
+            <Route path="/media/*" element={<div>Media</div>} />
+            <Route path="/coaching/*" element={<div>Coaching</div>} />
+            <Route path="/gallery/*" element={<div>Gallery</div>} />
+            <Route path="/about/*" element={<div>About Us</div>} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
 

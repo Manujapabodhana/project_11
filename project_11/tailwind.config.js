@@ -6,23 +6,25 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
-      },
       colors: {
-        'cricket-blue': '#1e3a8a',
-        'cricket-gold': '#fbbf24',
-        'cricket-orange': '#f97316',
+        'slc': {
+          'blue': '#0055B4',
+          'dark-blue': '#004598',
+          'gold': '#FFD700',
+          'orange': '#FFA500',
+          'red': '#D10000',
+          'search': '#3385d9'
+        }
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
+      spacing: {
+        '18': '4.5rem',
+        '22': '5.5rem',
       },
       animation: {
         'pulse-slow': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'slide-in': 'slideIn 0.5s ease-out',
-      },
-      keyframes: {
-        slideIn: {
-          '0%': { transform: 'translateX(100%)', opacity: '0' },
-          '100%': { transform: 'translateX(0)', opacity: '1' },
-        }
       }
     },
   },

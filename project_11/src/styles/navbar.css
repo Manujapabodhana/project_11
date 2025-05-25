@@ -1,0 +1,180 @@
+/* Navbar Styles */
+.header {
+  position: relative;
+}
+
+/* Top Layer */
+.top-layer {
+  background-color: #0055B4;
+  padding: 16px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.utility-items {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 24px;
+}
+
+.search-input {
+  background-color: #3385d9;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  border: none;
+  width: 200px;
+  font-size: 14px;
+}
+
+.search-input::placeholder {
+  color: white;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.btn {
+  padding: 8px 24px;
+  border-radius: 50px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-tickets {
+  background-color: #FFA500;
+  color: white;
+}
+
+.btn-tickets:hover {
+  background-color: #FF9500;
+}
+
+.btn-live {
+  background-color: #D10000;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.btn-live:hover {
+  background-color: #BB0000;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  margin-left: 8px;
+  animation: pulse 2s infinite;
+}
+
+.btn-language {
+  color: white;
+  background: none;
+  font-weight: 600;
+  padding: 8px 16px;
+}
+
+.btn-language:hover {
+  color: #FFD700;
+}
+
+/* Logo */
+.logo-container {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.logo {
+  height: 112px;
+  width: auto;
+  border: 2px solid #FFD700;
+  background-color: #0055B4;
+  padding: 4px;
+}
+
+/* Bottom Layer */
+.nav {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.nav-container {
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .nav-menu {
+    display: flex;
+    gap: 32px;
+    margin-left: 160px;
+    list-style: none;
+    padding: 0;
+  }
+}
+
+.nav-link {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+}
+
+.nav-link:hover {
+  color: #0055B4;
+}
+
+.dropdown-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+}
+
+/* Diagonal Shape */
+.diagonal-shape {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 30%;
+  background-color: #004598;
+  transform: skewX(20deg) translateX(33%);
+  z-index: 0;
+}
+
+/* Animation */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+} 

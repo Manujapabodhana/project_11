@@ -3,27 +3,27 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    box-sizing: border-box;
-  }
-  
   body {
-    margin: 0;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    @apply font-sans antialiased;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-white text-sm font-semibold hover:text-[#FFD700] transition-colors duration-200;
+  }
+
+  .nav-button {
+    @apply text-white text-sm font-semibold px-4 py-1.5 rounded-full transition-colors duration-200;
+  }
+
+  .dropdown-arrow {
+    @apply w-4 h-4 ml-1 text-current inline-block;
   }
 }
 
 @layer utilities {
-  .hero-bg {
-    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
-  }
-  
-  .cricket-silhouette {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 600'%3E%3Cdefs%3E%3ClinearGradient id='playerGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23ffffff;stop-opacity:0.1'/%3E%3Cstop offset='100%25' style='stop-color:%23ffffff;stop-opacity:0.3'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='600' fill='url(%23playerGrad)'/%3E%3Cellipse cx='200' cy='350' rx='60' ry='100' fill='%23ffffff' opacity='0.15'/%3E%3Crect x='190' y='250' width='20' height='60' fill='%23ffffff' opacity='0.2'/%3E%3Ccircle cx='200' cy='230' r='15' fill='%23ffffff' opacity='0.2'/%3E%3Cpath d='M150 300 Q200 280 250 300 L240 350 Q200 330 160 350 Z' fill='%23ffffff' opacity='0.1'/%3E%3C/svg%3E");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+  .bg-diagonal {
+    @apply absolute right-0 top-0 bottom-0 w-[30%] bg-[#004598] transform skew-x-[20deg] translate-x-1/3 z-0;
   }
 }
